@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <script defer src="sum.js"></script>
+    </head>
+
+    <body>
+        <input type="text" id="num1" />
+        <input type="text" id="num2" />
+        <input type="text" id="result" readonly />
+        <br />
+        <button id="sumButton">Sum</button>
+        <button id="subtractButton">Subtract</button>
+
+        <!--<script>
+            function createCalculator() {
+                let selector1, selector2, resultSelector;
+    
+                return {
+                    init: function(sel1, sel2, resSel) {
+                        selector1 = document.querySelector(sel1);
+                        selector2 = document.querySelector(sel2);
+                        resultSelector = document.querySelector(resSel);
+                    },
+                    add: function() {
+                        const val1 = parseFloat(selector1.value);
+                        const val2 = parseFloat(selector2.value);
+                        resultSelector.value = val1 + val2;
+                    },
+                    subtract: function() {
+                        const val1 = parseFloat(selector1.value);
+                        const val2 = parseFloat(selector2.value);
+                        resultSelector.value = val1 - val2;
+                    }
+                };
+            }
+    
+            const calculator = createCalculator();
+            calculator.init('#num1', '#num2', '#result');
+    
+            document.getElementById('sumButton').addEventListener('click', () => {
+                calculator.add();
+            });
+    
+            document.getElementById('subtractButton').addEventListener('click', () => {
+                calculator.subtract();
+            });
+        </script>-->
+    </body>
+</html>
