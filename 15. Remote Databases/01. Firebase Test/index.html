@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="email" id="email" placeholder="email" />
+    <input type="password" id="password" placeholder="password" />
+    <button type="button" id="btn">Register</button>
+    <div id="error" style="color: red"></div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBICLIV_iP_Hita-FMZUou0JBW99-kbplQ",
+        authDomain: "softunidb-fb18e.firebaseapp.com",
+        projectId: "softunidb-fb18e",
+        storageBucket: "softunidb-fb18e.appspot.com",
+        messagingSenderId: "1042268447721",
+        appId: "1:1042268447721:web:2d61e4308ea0ab65a4e178",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+    <script>
+      let btn = document.getElementById("btn");
+
+      btn.onclick = (e) => {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let errContainer = document.getElementById("error");
+        errContainer.innerText = "";
+
+        if (!(email && password)) {
+          errContainer.innerText = "Email or password are empty!";
+        }
+
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .catch(function (error) {
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            errContainer.innerText = `Error code: ${errorCode}, Message: ${errorMessage}`;
+          });
+      };
+    </script>
+  </body>
+</html>
