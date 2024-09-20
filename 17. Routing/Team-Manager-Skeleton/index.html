@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/team.css">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Libraries we added: jQuery, bootstrap, handlebars, sammy, sammy.handlebars -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="../node_modules/sammy/lib/min/sammy-0.7.6.min.js"></script>
+    <script src="../node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+
+    <!-- After that we initialize Firebase SDK using ESM -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBCQfJ9SZvB6QPO9V2ipIo4VWetlOYqGqs",
+        authDomain: "anotherfbproject-d0621.firebaseapp.com",
+        projectId: "anotherfbproject-d0621",
+        storageBucket: "anotherfbproject-d0621.appspot.com",
+        messagingSenderId: "891309681369",
+        appId: "1:891309681369:web:5a28c82157847ce9a42cc8",
+        measurementId: "G-K840G3YWQY"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script type="module" src="scripts/app.js"></script>
+    <title>Team Managers App</title>
+  </head>
+
+  <body>
+    <div id="infoBox" class="notification" disabled></div>
+    <div id="errorBox" class="notification" disabled></div>
+    <div id="main"></div>
+  </body>
+</html>
